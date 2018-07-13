@@ -1,9 +1,9 @@
 package com.gidsor.firewalllog.views
 
+import com.gidsor.firewalllog.views.TemplateTables.KasperskyTable
 import tornadofx.*
 
 class MainView : View("Firewall Log Analyzer") {
-    private val addLogFileButton = button("добавить")
     override val root = borderpane {
         prefWidth = 800.0
         prefHeight = 600.0
@@ -18,6 +18,6 @@ class MainView : View("Firewall Log Analyzer") {
 
         }
 
-        center(MainTable::class)
+        center(KasperskyTable::class)
     }
 }
