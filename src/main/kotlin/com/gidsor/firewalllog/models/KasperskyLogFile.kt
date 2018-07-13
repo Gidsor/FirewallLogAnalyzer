@@ -9,7 +9,10 @@ import java.time.LocalTime
 import java.util.*
 
 
-class KasperskyLogFile(date: LocalDate, time: LocalTime, name: String, protect: String, application: String, result: String, objectAttack: String) : LogFile() {
+class KasperskyLogFile(date: LocalDate = LocalDate.now(), time: LocalTime = LocalTime.now(),
+                       name: String = "", protect: String = "", application: String = "",
+                       result: String = "", objectAttack: String = "") : LogFile() {
+
     val id = UUID.randomUUID()
 
     val dateProperty = SimpleObjectProperty<LocalDate>(date)

@@ -18,8 +18,6 @@ class MainView : View("Firewall Log Analyzer") {
 
         }
 
-        center {
-
-        }
+        center(MainTable::class)
     }
 }
