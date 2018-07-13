@@ -1,15 +1,15 @@
 package com.gidsor.firewalllog.models
 
+import javafx.beans.property.ObjectProperty
 import javafx.beans.property.SimpleObjectProperty
 import javafx.beans.property.SimpleStringProperty
+import tornadofx.*
 import java.time.LocalDate
 import java.time.LocalTime
 import java.util.*
-import tornadofx.getValue
-import tornadofx.setValue
 
 
-class KasperskyLogFile(date: LocalDate, time: LocalTime, name: String, protect: String, application: String, result: String, objectAttack: String) {
+class KasperskyLogFile(date: LocalDate, time: LocalTime, name: String, protect: String, application: String, result: String, objectAttack: String) : LogFile() {
     val id = UUID.randomUUID()
 
     val dateProperty = SimpleObjectProperty<LocalDate>(date)
@@ -34,6 +34,10 @@ class KasperskyLogFile(date: LocalDate, time: LocalTime, name: String, protect: 
 
     val objectAttackProperty = SimpleStringProperty(objectAttack)
     var objectAttack by objectAttackProperty
+
+}
+
+class KasperskyLogFileMode(property: ObjectProperty<KasperskyLogFile>) : ItemViewModel<KasperskyLogFile>(itemProperty = property) {
 
 }
 

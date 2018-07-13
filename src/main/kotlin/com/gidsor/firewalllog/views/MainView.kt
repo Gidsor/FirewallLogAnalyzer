@@ -3,11 +3,12 @@ package com.gidsor.firewalllog.views
 import tornadofx.*
 
 class MainView : View("Firewall Log Analyzer") {
-    val ww = label("time")
+    private val addLogFileButton = button("добавить")
     override val root = borderpane {
-        top {
-            this += ww
-        }
+        prefWidth = 800.0
+        prefHeight = 600.0
+
+        top(MainMenu::class)
 
         left {
 
