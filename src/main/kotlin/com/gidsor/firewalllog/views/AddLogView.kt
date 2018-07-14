@@ -1,6 +1,6 @@
 package com.gidsor.firewalllog.views
 
-import com.gidsor.firewalllog.controllers.store.StoreKaspersky
+import com.gidsor.firewalllog.controllers.store.KasperskyStore
 import com.gidsor.firewalllog.utils.FirewallType
 import javafx.beans.property.SimpleObjectProperty
 import javafx.collections.FXCollections
@@ -11,7 +11,7 @@ class AddLogView : View("My View") {
     val firewalls = FXCollections.observableArrayList<FirewallType>()
     val firstFirewall: SimpleObjectProperty<FirewallType>
 
-    val storeKaspersky: StoreKaspersky by inject()
+    val kasperskyStore: KasperskyStore by inject()
 
     init {
         firewalls.addAll(FirewallType.values())
@@ -31,7 +31,7 @@ class AddLogView : View("My View") {
             action {
                 val logFile = chooseFile("Выберите лог файл", arrayOf(FileChooser.ExtensionFilter("*.txt", "*.txt")), FileChooserMode.Single)
                 if (logFile.isNotEmpty()) {
-                    storeKaspersky.addLogString(logFile.first().readLines().toString())
+                    kasperskyStore.addLogString(logFile.first().readLines().toString())
                 }
                 close()
             }

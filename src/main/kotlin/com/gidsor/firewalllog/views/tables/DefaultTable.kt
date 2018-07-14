@@ -1,4 +1,4 @@
-package com.gidsor.firewalllog.views.tables.template
+package com.gidsor.firewalllog.views.tables
 
 import tornadofx.*
 

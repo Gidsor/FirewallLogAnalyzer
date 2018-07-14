@@ -10,10 +10,9 @@ import java.time.LocalDate
 import java.time.LocalTime
 import java.util.*
 
-
-class KasperskyLogFile(date: LocalDate = LocalDate.now(), time: LocalTime = LocalTime.now(),
-                       name: String = "", protect: String = "", application: String = "",
-                       result: String = "", objectAttack: String = "") : LogFile(FirewallType.Kaspersky) {
+class TLWR1043NDLogFile(date: LocalDate = LocalDate.now(), time: LocalTime = LocalTime.now(),
+                        name: String = "", protect: String = "", application: String = "",
+                        result: String = "", objectAttack: String = "") : LogFile(FirewallType.TLWR1043ND) {
 
     val id = UUID.randomUUID()
 
@@ -42,7 +41,6 @@ class KasperskyLogFile(date: LocalDate = LocalDate.now(), time: LocalTime = Loca
 
 }
 
-class KasperskyLogFileMode(property: ObjectProperty<KasperskyLogFile>) : ItemViewModel<KasperskyLogFile>(itemProperty = property) {
+class TLWR1043NDLogFileMode(property: ObjectProperty<TLWR1043NDLogFile>) : ItemViewModel<TLWR1043NDLogFile>(itemProperty = property) {
 
 }
-
