@@ -1,9 +1,13 @@
 package com.gidsor.firewalllog.views
 
 import com.gidsor.firewalllog.controllers.store.KasperskyStore
+import com.gidsor.firewalllog.controllers.store.TLWR1043NDStore
 import com.gidsor.firewalllog.utils.FirewallType
 import javafx.beans.property.SimpleObjectProperty
 import javafx.collections.FXCollections
+import javafx.collections.ObservableArray
+import javafx.collections.ObservableList
+import javafx.scene.control.ComboBox
 import javafx.stage.FileChooser
 import tornadofx.*
 
@@ -11,8 +15,10 @@ class AddLogView : View("My View") {
     val firewalls = FXCollections.observableArrayList<FirewallType>()
     val firstFirewall: SimpleObjectProperty<FirewallType>
 
-    val kasperskyStore: KasperskyStore by inject()
+    private val kasperskyStore: KasperskyStore by inject()
+    private val tlwr1043ndStore: TLWR1043NDStore by inject()
 
+    private lateinit var firewallComboBox: ComboBox<FirewallType>
     init {
         firewalls.addAll(FirewallType.values())
         firstFirewall = SimpleObjectProperty<FirewallType>(firewalls.first())
@@ -21,7 +27,7 @@ class AddLogView : View("My View") {
     override val root = vbox {
         label("Выберите межсетевой экран")
 
-        combobox(firstFirewall, firewalls) {
+        firewallComboBox = combobox(firstFirewall, firewalls) {
 
         }
 
@@ -31,7 +37,10 @@ class AddLogView : View("My View") {
             action {
                 val logFile = chooseFile("Выберите лог файл", arrayOf(FileChooser.ExtensionFilter("*.txt", "*.txt")), FileChooserMode.Single)
                 if (logFile.isNotEmpty()) {
-                    kasperskyStore.addLogString(logFile.first().readLines().toString())
+                    when (firewallComboBox.selectedItem) {
+                        FirewallType.Kaspersky -> kasperskyStore.addLogString(logFile.first().readLines().toString())
+                        FirewallType.TLWR1043ND -> tlwr1043ndStore.addLogString(logFile.first().readLines().toString())
+                    }
                 }
                 close()
             }
