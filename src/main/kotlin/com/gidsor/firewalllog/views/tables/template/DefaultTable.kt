@@ -1,7 +1,7 @@
-package com.gidsor.firewalllog.views
+package com.gidsor.firewalllog.views.tables.template
 
 import tornadofx.*
 
-class MainTable : View("My View") {
+class DefaultTable : View("My View") {
     override val root = label("Выберите или добавьте лог файл")
 }

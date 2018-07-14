@@ -1,18 +1,16 @@
 package com.gidsor.firewalllog.views
 
-import com.gidsor.firewalllog.views.TemplateTables.KasperskyTable
+import com.gidsor.firewalllog.views.tables.template.KasperskyTable
 import tornadofx.*
 
-class MainView : View("Firewall Log Analyzer") {
+class MainWindow : View("Firewall Log Analyzer") {
     override val root = borderpane {
         prefWidth = 800.0
         prefHeight = 600.0
 
         top(MainMenu::class)
 
-        left {
-
-        }
+        left(FirewallTreeView::class)
 
         bottom {
 

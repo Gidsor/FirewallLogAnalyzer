@@ -1,7 +1,7 @@
-package com.gidsor.firewalllog.views.TemplateTables
+package com.gidsor.firewalllog.views.tables.template
 
-import com.gidsor.firewalllog.controllers.StoreKaspersky
-import com.gidsor.firewalllog.models.KasperskyLogFile
+import com.gidsor.firewalllog.controllers.store.StoreKaspersky
+import com.gidsor.firewalllog.models.logfiles.template.KasperskyLogFile
 import tornadofx.*
 
 class KasperskyTable : View("My View") {

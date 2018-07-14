@@ -1,5 +1,7 @@
-package com.gidsor.firewalllog.models
+package com.gidsor.firewalllog.models.logfiles.template
 
+import com.gidsor.firewalllog.models.logfiles.LogFile
+import com.gidsor.firewalllog.utils.FirewallType
 import javafx.beans.property.ObjectProperty
 import javafx.beans.property.SimpleObjectProperty
 import javafx.beans.property.SimpleStringProperty
@@ -12,6 +14,8 @@ import java.util.*
 class KasperskyLogFile(date: LocalDate = LocalDate.now(), time: LocalTime = LocalTime.now(),
                        name: String = "", protect: String = "", application: String = "",
                        result: String = "", objectAttack: String = "") : LogFile() {
+
+    public val FYREWALL_TYPE = FirewallType.Kaspersky
 
     val id = UUID.randomUUID()
 

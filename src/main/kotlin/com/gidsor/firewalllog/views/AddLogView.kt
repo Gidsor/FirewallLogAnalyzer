@@ -1,6 +1,6 @@
 package com.gidsor.firewalllog.views
 
-import com.gidsor.firewalllog.controllers.StoreKaspersky
+import com.gidsor.firewalllog.controllers.store.StoreKaspersky
 import com.gidsor.firewalllog.utils.FirewallType
 import javafx.beans.property.SimpleObjectProperty
 import javafx.collections.FXCollections

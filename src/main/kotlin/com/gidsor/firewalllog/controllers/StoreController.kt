@@ -1,10 +1,10 @@
 package com.gidsor.firewalllog.controllers
 
-import com.gidsor.firewalllog.models.KasperskyLogFile
+import com.gidsor.firewalllog.models.logfiles.template.KasperskyLogFile
 import javafx.collections.ObservableList
 import tornadofx.*
 
-class StoreKaspersky : Controller() {
+abstract class StoreController : Controller() {
     private val logs = mutableListOf<KasperskyLogFile>().observable()
 
     fun addLogFile(log: KasperskyLogFile) {
