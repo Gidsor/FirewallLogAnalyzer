@@ -1,10 +1,10 @@
 package com.gidsor.firewalllog.models.logfiles
 
 import com.gidsor.firewalllog.utils.FirewallType
+import javafx.beans.property.ObjectProperty
 import javafx.beans.property.SimpleObjectProperty
 import javafx.beans.property.SimpleStringProperty
-import tornadofx.getValue
-import tornadofx.setValue
+import tornadofx.*
 
 open class LogFile(firewallType: FirewallType, nameOfLogFile: String) {
     val nameOfLogFileProperty = SimpleStringProperty()
@@ -12,4 +12,8 @@ open class LogFile(firewallType: FirewallType, nameOfLogFile: String) {
 
     val firewallTypeProperty = SimpleObjectProperty<FirewallType>()
     var firewallType by firewallTypeProperty
+}
+
+class LogFileMode(property: ObjectProperty<LogFile>) : ItemViewModel<LogFile>(itemProperty = property) {
+
 }
