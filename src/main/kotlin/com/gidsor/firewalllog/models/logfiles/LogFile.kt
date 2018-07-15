@@ -7,10 +7,10 @@ import javafx.beans.property.SimpleStringProperty
 import tornadofx.*
 
 open class LogFile(firewallType: FirewallType, nameOfLogFile: String) {
-    val nameOfLogFileProperty = SimpleStringProperty()
+    val nameOfLogFileProperty = SimpleStringProperty(nameOfLogFile)
     var nameOfLogFile by nameOfLogFileProperty
 
-    val firewallTypeProperty = SimpleObjectProperty<FirewallType>()
+    val firewallTypeProperty = SimpleObjectProperty<FirewallType>(firewallType)
     var firewallType by firewallTypeProperty
 }
 

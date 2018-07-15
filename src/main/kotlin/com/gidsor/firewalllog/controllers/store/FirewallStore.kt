@@ -7,17 +7,14 @@ import com.gidsor.firewalllog.utils.FirewallType
 import javafx.collections.ObservableList
 import tornadofx.*
 
-class CommonStore : Controller() {
-    private val logs = mutableListOf<LogFile>().observable()
+class FirewallStore : Controller() {
+    private val firewalls = mutableListOf<FirewallType>().observable()
 
-    private val firewallStore: FirewallStore by inject()
-
-    fun addLogFile(log: LogFile) {
-        logs.add(log)
-        firewallStore.addFirewall(log.firewallType)
+    fun addFirewall(firewall: FirewallType) {
+        firewalls.add(firewall)
     }
 
-    fun getLogs(): ObservableList<LogFile> {
-        return logs
+    fun getFirewalls(): ObservableList<FirewallType> {
+        return firewalls
     }
 }
