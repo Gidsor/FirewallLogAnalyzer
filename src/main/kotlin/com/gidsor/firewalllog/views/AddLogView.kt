@@ -5,8 +5,6 @@ import com.gidsor.firewalllog.controllers.store.TLWR1043NDStore
 import com.gidsor.firewalllog.utils.FirewallType
 import javafx.beans.property.SimpleObjectProperty
 import javafx.collections.FXCollections
-import javafx.collections.ObservableArray
-import javafx.collections.ObservableList
 import javafx.scene.control.ComboBox
 import javafx.stage.FileChooser
 import tornadofx.*
@@ -38,8 +36,10 @@ class AddLogView : View("My View") {
                 val logFile = chooseFile("Выберите лог файл", arrayOf(FileChooser.ExtensionFilter("*.txt", "*.txt")), FileChooserMode.Single)
                 if (logFile.isNotEmpty()) {
                     when (firewallComboBox.selectedItem) {
-                        FirewallType.Kaspersky -> kasperskyStore.addLogString(logFile.first().readLines().toString())
-                        FirewallType.TLWR1043ND -> tlwr1043ndStore.addLogString(logFile.first().readLines().toString())
+                        FirewallType.Kaspersky -> kasperskyStore.addLogFile(logFile.first().readLines().toString(),
+                                logFile.first().nameWithoutExtension)
+                        FirewallType.TLWR1043ND -> tlwr1043ndStore.addLogFile(logFile.first().readLines().toString(),
+                                logFile.first().nameWithoutExtension)
                     }
                 }
                 close()

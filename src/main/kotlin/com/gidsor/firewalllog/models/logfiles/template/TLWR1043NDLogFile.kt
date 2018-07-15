@@ -12,7 +12,7 @@ import java.util.*
 
 class TLWR1043NDLogFile(date: LocalDate = LocalDate.now(), time: LocalTime = LocalTime.now(),
                         name: String = "", protect: String = "", application: String = "",
-                        result: String = "", objectAttack: String = "") : LogFile(FirewallType.TLWR1043ND) {
+                        result: String = "", objectAttack: String = "", nameOfLogFile: String = "") : LogFile(FirewallType.TLWR1043ND, nameOfLogFile) {
 
     val id = UUID.randomUUID()
 

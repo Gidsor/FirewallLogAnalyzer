@@ -14,8 +14,8 @@ class KasperskyStore : StoreController() {
         logs.add(log)
     }
 
-    fun addLogString(log: String) {
-        val logFile = KasperskyLogFile(name = log)
+    fun addLogFile(log: String, nameOfLogFile: String) {
+        val logFile = KasperskyLogFile(name = log, nameOfLogFile = nameOfLogFile)
         addLogFile(logFile)
     }
 

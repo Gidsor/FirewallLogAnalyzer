@@ -13,7 +13,7 @@ import java.util.*
 
 class KasperskyLogFile(date: LocalDate = LocalDate.now(), time: LocalTime = LocalTime.now(),
                        name: String = "", protect: String = "", application: String = "",
-                       result: String = "", objectAttack: String = "") : LogFile(FirewallType.Kaspersky) {
+                       result: String = "", objectAttack: String = "", nameOfLogFile: String = "") : LogFile(FirewallType.Kaspersky, nameOfLogFile) {
 
     val id = UUID.randomUUID()
 
