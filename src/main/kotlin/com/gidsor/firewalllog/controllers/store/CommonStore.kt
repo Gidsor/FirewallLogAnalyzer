@@ -14,6 +14,7 @@ class CommonStore : Controller() {
 
     fun addLogFile(log: LogFile) {
         logs.add(log)
+        firewallStore.getFirewalls().remove(log.firewallType)
         firewallStore.addFirewall(log.firewallType)
     }
 

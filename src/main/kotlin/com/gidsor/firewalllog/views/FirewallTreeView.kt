@@ -30,7 +30,6 @@ class FirewallTreeView : View("My View") {
 
         populate { parent ->
             val value = parent.value
-            println(value)
             when {
                 parent == root -> firewallStore.getFirewalls()
                 value is FirewallType -> commonStore.getLogs().filter { it.firewallType == value }
