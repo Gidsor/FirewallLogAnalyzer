@@ -29,7 +29,7 @@ class TLWR1043NDParser {
                 val application: String = s[3]
                 val result: String = s[4]
                 val objectAttack: String = s[5]
-                logs.add(TLWR1043NDLogFile(date, time, name, protect, application, result, objectAttack, nameOfLogFile))
+                logs.add(TLWR1043NDLogFile(date, time))
             }
 
             return logs

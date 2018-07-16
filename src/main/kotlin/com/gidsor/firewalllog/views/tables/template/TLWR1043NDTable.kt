@@ -8,11 +8,11 @@ class TLWR1043NDTable : View("My View") {
     private val store: TLWR1043NDStore by inject()
 
     override val root = tableview(store.getLogs()) {
-        column("time", TLWR1043NDLogFile::time)
-        column("date", TLWR1043NDLogFile::date)
-        column("text", TLWR1043NDLogFile::type)
-        column("text", TLWR1043NDLogFile::level)
-        column("text", TLWR1043NDLogFile::logContent)
+        column("Дата события", TLWR1043NDLogFile::time)
+        column("Время события", TLWR1043NDLogFile::date)
+        column("Тип события", TLWR1043NDLogFile::type)
+        column("Уровень значимости", TLWR1043NDLogFile::level)
+        column("Содержание лога", TLWR1043NDLogFile::logContent)
         smartResize()
     }
 }

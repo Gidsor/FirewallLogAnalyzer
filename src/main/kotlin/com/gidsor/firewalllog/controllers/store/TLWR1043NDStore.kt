@@ -16,7 +16,7 @@ class TLWR1043NDStore : Controller() {
     }
 
     fun addLogFile(log: String, nameOfLogFile: String) {
-        val logFile = TLWR1043NDLogFile(name = log, nameOfLogFile = nameOfLogFile)
+        val logFile = TLWR1043NDLogFile(nameOfLogFile = nameOfLogFile)
         addLogFile(logFile)
     }
 
