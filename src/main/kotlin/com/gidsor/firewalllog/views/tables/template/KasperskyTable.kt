@@ -15,7 +15,7 @@ class KasperskyTable : View("My View") {
         column("Программа", KasperskyLogFile::application)
         column("Результат", KasperskyLogFile::result)
         column("Объект", KasperskyLogFile::objectAttack)
-        
+
         smartResize()
     }
 }

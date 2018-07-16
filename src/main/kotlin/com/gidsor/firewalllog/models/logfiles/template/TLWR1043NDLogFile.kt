@@ -11,8 +11,7 @@ import java.time.LocalTime
 import java.util.*
 
 class TLWR1043NDLogFile(date: LocalDate = LocalDate.now(), time: LocalTime = LocalTime.now(),
-                        name: String = "", protect: String = "", application: String = "",
-                        result: String = "", objectAttack: String = "", nameOfLogFile: String = "") : LogFile(FirewallType.TLWR1043ND, nameOfLogFile) {
+                        type: String = "", level: String ="", logContent: String = "", nameOfLogFile: String = "") : LogFile(FirewallType.TLWR1043ND, nameOfLogFile) {
 
     val id = UUID.randomUUID()
 
@@ -22,23 +21,15 @@ class TLWR1043NDLogFile(date: LocalDate = LocalDate.now(), time: LocalTime = Loc
     val timeProperty = SimpleObjectProperty<LocalTime>(time)
     var time by timeProperty
 
-    val nameProperty = SimpleStringProperty(name)
-    var name by nameProperty
-
-    val protectProperty = SimpleStringProperty(protect)
-    var protect by protectProperty
-
-    val applicationProperty = SimpleStringProperty(application)
-    var application by applicationProperty
+    val typeProperty = SimpleStringProperty(type)
+    var type by typeProperty
 
 
-    val resultProperty = SimpleStringProperty(result)
-    var result by resultProperty
+    val levelProperty = SimpleStringProperty(level)
+    var level by levelProperty
 
-
-    val objectAttackProperty = SimpleStringProperty(objectAttack)
-    var objectAttack by objectAttackProperty
-
+    val logContentProperty = SimpleStringProperty(logContent)
+    var logContent by logContentProperty
 }
 
 class TLWR1043NDLogFileMode(property: ObjectProperty<TLWR1043NDLogFile>) : ItemViewModel<TLWR1043NDLogFile>(itemProperty = property) {
