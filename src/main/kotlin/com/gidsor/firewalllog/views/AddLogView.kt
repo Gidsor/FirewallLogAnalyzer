@@ -46,7 +46,7 @@ class AddLogView : View("My View") {
                         }
 
                         FirewallType.TLWR1043ND -> {
-                            tlwr1043ndStore.addLogFile(text, name)
+                            tlwr1043ndStore.addLogFiles(text, name)
                         }
                     }
                 }
