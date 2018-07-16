@@ -4,7 +4,7 @@ import com.gidsor.firewalllog.controllers.store.KasperskyStore
 import com.gidsor.firewalllog.models.logfiles.template.KasperskyLogFile
 import tornadofx.*
 
-class KasperskyTable : View("My View") {
+class KasperskyStoreTable : View("My View") {
     private val store: KasperskyStore by inject()
 
     override val root = tableview(store.getLogs()) {

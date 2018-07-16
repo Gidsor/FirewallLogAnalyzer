@@ -2,15 +2,12 @@ package com.gidsor.firewalllog.views
 
 import com.gidsor.firewalllog.controllers.store.CommonStore
 import com.gidsor.firewalllog.controllers.store.FirewallStore
-import com.gidsor.firewalllog.controllers.store.KasperskyStore
-import com.gidsor.firewalllog.controllers.store.TLWR1043NDStore
 import com.gidsor.firewalllog.models.logfiles.LogFile
-import com.gidsor.firewalllog.models.logfiles.template.KasperskyLogFile
-import com.gidsor.firewalllog.models.logfiles.template.TLWR1043NDLogFile
 import com.gidsor.firewalllog.utils.FirewallType
 import com.gidsor.firewalllog.views.tables.DefaultTable
-import com.gidsor.firewalllog.views.tables.template.KasperskyTable
-import com.gidsor.firewalllog.views.tables.template.TLWR1043NDTable
+import com.gidsor.firewalllog.views.tables.template.KasperskyLogFileTable
+import com.gidsor.firewalllog.views.tables.template.KasperskyStoreTable
+import com.gidsor.firewalllog.views.tables.template.TLWR1043NDStoreTable
 import javafx.scene.control.TreeItem
 import javafx.scene.layout.BorderPane
 import tornadofx.*
@@ -40,15 +37,16 @@ class FirewallTreeView : View("My View") {
                 is FirewallType -> {
                     when (it) {
                         FirewallType.Kaspersky -> {
-                            (parent as BorderPane).center = BorderPane().center(KasperskyTable::class)
+                            (parent as BorderPane).center = BorderPane().center(KasperskyStoreTable::class)
                         }
 
                         FirewallType.TLWR1043ND -> {
-                            (parent as BorderPane).center = BorderPane().center(TLWR1043NDTable::class)
+                            (parent as BorderPane).center = BorderPane().center(TLWR1043NDStoreTable::class)
                         }
                     }
                 }
                 is LogFile -> {
+                    (parent as BorderPane).center = KasperskyLogFileTable(it.nameOfLogFile).table
                     println("Is Log File: ${it.nameOfLogFile}")
                 }
             }
