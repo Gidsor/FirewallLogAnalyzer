@@ -13,6 +13,10 @@ class KasperskyFirewallView : View("My View") {
                 val count = store.getLogs().distinctBy { it.nameOfLogFile }.size
                 text = "Количество лог файлов: $count"
             }
+            label {
+                val count = store.getLogs().size
+                text = "Количество логов: $count"
+            }
         }
 
         vbox {
