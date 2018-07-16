@@ -58,7 +58,7 @@ class FirewallTreeView : View("My View") {
             val value = parent.value
             when {
                 parent == root -> firewallStore.getFirewalls()
-                value is FirewallType -> commonStore.getLogs().filter { it.firewallType == value }
+                value is FirewallType -> commonStore.getLogs().distinctBy { it.nameOfLogFile }.filter { it.firewallType == value }
                 else -> null
             }
         }
