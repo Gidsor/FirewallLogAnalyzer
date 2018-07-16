@@ -1,7 +1,7 @@
-package com.gidsor.firewalllog.views.tables
+package com.gidsor.firewalllog.views.firewalls
 
 import tornadofx.*
 
-class DefaultTable : View("My View") {
+class DefaultFirewallView : View("My View") {
     override val root = label("Выберите или добавьте хранилище лог файлов")
 }

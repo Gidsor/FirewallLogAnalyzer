@@ -1,6 +1,6 @@
 package com.gidsor.firewalllog.views
 
-import com.gidsor.firewalllog.views.tables.DefaultTable
+import com.gidsor.firewalllog.views.firewalls.DefaultFirewallView
 import tornadofx.*
 
 class MainWindow : View("Firewall Log Analyzer") {
@@ -18,6 +18,6 @@ class MainWindow : View("Firewall Log Analyzer") {
 
         }
 
-        center(DefaultTable::class)
+        center(DefaultFirewallView::class)
     }
 }
