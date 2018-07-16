@@ -9,11 +9,17 @@ class TLWR1043NDParser {
         fun parseTextToLogFiles(text: String, nameOfLogFile: String): List<TLWR1043NDLogFile> {
             val logs = mutableListOf<TLWR1043NDLogFile>()
 
-            println(text)
-            val textsplit = text
-            for (t in textsplit) {
+            val textsplit = text.split(",")
+            for (t in textsplit.subList(10, textsplit.size)) {
+                val s = t.split("\t")
 
-                logs.add(TLWR1043NDLogFile())
+                val date: LocalDate = LocalDate.now()
+                val time: LocalTime = LocalTime.now()
+                val type: String = s[1]
+                val level: String = s[2]
+                val logContent: String = s[3]
+
+                logs.add(TLWR1043NDLogFile(date, time, type, level, logContent, nameOfLogFile))
             }
 
             return logs

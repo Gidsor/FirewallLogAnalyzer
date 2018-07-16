@@ -8,6 +8,7 @@ class KasperskyParser {
     companion object {
         fun parseTextToLogFiles(text: String, nameOfLogFile: String): List<KasperskyLogFile> {
             val logs = mutableListOf<KasperskyLogFile>()
+
             val textsplit = text.split(",")
             for (t in textsplit) {
 
@@ -21,14 +22,15 @@ class KasperskyParser {
                 }
                 val dmy = timeText[0].split(".")
                 val hms = timeText[1].split(":")
+
                 val date: LocalDate = LocalDate.of(dmy[2].toInt(), dmy[1].toInt(), dmy[0].toInt())
                 val time: LocalTime = LocalTime.of(hms[0].toInt(), hms[1].toInt(), hms[2].toInt())
-
                 val name: String = s[1]
                 val protect: String = s[2]
                 val application: String = s[3]
                 val result: String = s[4]
                 val objectAttack: String = s[5]
+
                 logs.add(KasperskyLogFile(date, time, name, protect, application, result, objectAttack, nameOfLogFile))
             }
 

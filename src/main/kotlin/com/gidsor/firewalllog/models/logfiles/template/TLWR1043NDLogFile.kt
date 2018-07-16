@@ -11,7 +11,7 @@ import java.time.LocalTime
 import java.util.*
 
 class TLWR1043NDLogFile(date: LocalDate = LocalDate.now(), time: LocalTime = LocalTime.now(),
-                        type: String = "", level: String ="", logContent: String = "", nameOfLogFile: String = "") : LogFile(FirewallType.TLWR1043ND, nameOfLogFile) {
+                        type: String = "", level: String = "", logContent: String = "", nameOfLogFile: String = "") : LogFile(FirewallType.TLWR1043ND, nameOfLogFile) {
 
     val id = UUID.randomUUID()
 
