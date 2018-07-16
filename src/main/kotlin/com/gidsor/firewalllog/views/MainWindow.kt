@@ -7,9 +7,6 @@ import tornadofx.*
 
 class MainWindow : View("Firewall Log Analyzer") {
 
-    companion object {
-        var currentTable: View = KasperskyTable()
-    }
 
     override val root = borderpane {
         prefWidth = 800.0
@@ -23,6 +20,6 @@ class MainWindow : View("Firewall Log Analyzer") {
 
         }
 
-        center(currentTable::class)
+        center(DefaultTable::class)
     }
 }

@@ -8,7 +8,11 @@ import com.gidsor.firewalllog.models.logfiles.LogFile
 import com.gidsor.firewalllog.models.logfiles.template.KasperskyLogFile
 import com.gidsor.firewalllog.models.logfiles.template.TLWR1043NDLogFile
 import com.gidsor.firewalllog.utils.FirewallType
+import com.gidsor.firewalllog.views.tables.DefaultTable
+import com.gidsor.firewalllog.views.tables.template.KasperskyTable
+import com.gidsor.firewalllog.views.tables.template.TLWR1043NDTable
 import javafx.scene.control.TreeItem
+import javafx.scene.layout.BorderPane
 import tornadofx.*
 
 class FirewallTreeView : View("My View") {
@@ -25,6 +29,28 @@ class FirewallTreeView : View("My View") {
                 is FirewallType -> it.name
                 is LogFile -> it.nameOfLogFile
                 else -> kotlin.error("Invalid value type")
+            }
+        }
+
+        onUserSelect {
+            when (it) {
+                is String -> {
+                    (parent as BorderPane).center = BorderPane().center(DefaultTable::class)
+                }
+                is FirewallType -> {
+                    when (it) {
+                        FirewallType.Kaspersky -> {
+                            (parent as BorderPane).center = BorderPane().center(KasperskyTable::class)
+                        }
+
+                        FirewallType.TLWR1043ND -> {
+                            (parent as BorderPane).center = BorderPane().center(TLWR1043NDTable::class)
+                        }
+                    }
+                }
+                is LogFile -> {
+                    println("Is Log File: ${it.nameOfLogFile}")
+                }
             }
         }
 

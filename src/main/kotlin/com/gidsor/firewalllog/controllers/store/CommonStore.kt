@@ -20,6 +20,8 @@ class CommonStore : Controller() {
 
     fun addLogFiles(log: List<LogFile>) {
         logs.addAll(log)
+        firewallStore.getFirewalls().remove(log[0].firewallType)
+        firewallStore.addFirewall(log[0].firewallType)
     }
 
     fun getLogs(): ObservableList<LogFile> {

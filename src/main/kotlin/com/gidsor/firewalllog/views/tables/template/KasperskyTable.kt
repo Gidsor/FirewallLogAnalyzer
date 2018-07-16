@@ -15,11 +15,7 @@ class KasperskyTable : View("My View") {
         column("Программа", KasperskyLogFile::application)
         column("Результат", KasperskyLogFile::result)
         column("Объект", KasperskyLogFile::objectAttack)
-        /*
-        date: LocalDate = LocalDate.now(), time: LocalTime = LocalTime.now(),
-                       name: String = "", protect: String = "", application: String = "",
-                       result: String = "", objectAttack: String = "", nameOfLogFile: String = ""
-         */
+        
         smartResize()
     }
 }

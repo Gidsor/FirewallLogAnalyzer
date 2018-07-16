@@ -9,14 +9,12 @@ class KasperskyStore : Controller() {
     private val logs = mutableListOf<KasperskyLogFile>().observable()
     private val commonStore: CommonStore by inject()
 
-    fun addLogFile(log: KasperskyLogFile) {
-        logs.add(log)
-        commonStore.addLogFile(log)
-    }
+//    fun addLogFile(log: KasperskyLogFile) {
+//        logs.add(log)
+//        commonStore.addLogFile(log)
+//    }
 
     fun addLogFiles(log: String, nameOfLogFile: String) {
-//        val logFile = KasperskyLogFile(name = log, nameOfLogFile = nameOfLogFile)
-//        addLogFile(logFile)
         addLogFiles(KasperskyParser.parseTextToLogFiles(log, nameOfLogFile))
     }
 
