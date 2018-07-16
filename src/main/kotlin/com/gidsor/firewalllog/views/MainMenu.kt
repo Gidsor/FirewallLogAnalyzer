@@ -1,7 +1,5 @@
 package com.gidsor.firewalllog.views
 
-import com.gidsor.firewalllog.controllers.analysis.LocationIP
-import javafx.geometry.Insets
 import tornadofx.*
 
 class MainMenu : View("My View") {
@@ -14,7 +12,7 @@ class MainMenu : View("My View") {
 
         button("Получить местоположение по IP") {
             action {
-                GetLocationIPView().openModal()
+                GetInformationByIPView().openModal()
             }
         }
     }
