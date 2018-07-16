@@ -36,11 +36,18 @@ class AddLogView : View("My View") {
             action {
                 val logFile = chooseFile("Выберите лог файл", arrayOf(FileChooser.ExtensionFilter("*.txt", "*.txt")), FileChooserMode.Single)
                 if (logFile.isNotEmpty()) {
+                    val text = logFile.first().readLines().toString()
+                    val name = logFile.first().nameWithoutExtension
+
                     when (firewallComboBox.selectedItem) {
-                        FirewallType.Kaspersky -> kasperskyStore.addLogFile(logFile.first().readLines().toString(),
-                                logFile.first().nameWithoutExtension)
-                        FirewallType.TLWR1043ND -> tlwr1043ndStore.addLogFile(logFile.first().readLines().toString(),
-                                logFile.first().nameWithoutExtension)
+                        FirewallType.Kaspersky -> {
+                            kasperskyStore.addLogFile(text, name)
+
+                        }
+
+                        FirewallType.TLWR1043ND -> {
+                            tlwr1043ndStore.addLogFile(text, name)
+                        }
                     }
                 }
                 close()

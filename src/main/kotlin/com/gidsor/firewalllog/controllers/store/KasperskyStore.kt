@@ -1,5 +1,6 @@
 package com.gidsor.firewalllog.controllers.store
 
+import com.gidsor.firewalllog.controllers.parsers.KasperskyParser
 import com.gidsor.firewalllog.models.logfiles.template.KasperskyLogFile
 import javafx.collections.ObservableList
 import tornadofx.*
@@ -14,6 +15,7 @@ class KasperskyStore : Controller() {
     }
 
     fun addLogFile(log: String, nameOfLogFile: String) {
+        println(KasperskyParser.parseTextToLogFiles(log, nameOfLogFile))
         val logFile = KasperskyLogFile(name = log, nameOfLogFile = nameOfLogFile)
         addLogFile(logFile)
     }

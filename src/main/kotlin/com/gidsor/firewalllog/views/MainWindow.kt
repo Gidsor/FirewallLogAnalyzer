@@ -6,6 +6,11 @@ import com.gidsor.firewalllog.views.tables.template.TLWR1043NDTable
 import tornadofx.*
 
 class MainWindow : View("Firewall Log Analyzer") {
+
+    companion object {
+        var currentTable: View = DefaultTable()
+    }
+
     override val root = borderpane {
         prefWidth = 800.0
         prefHeight = 600.0
@@ -18,6 +23,6 @@ class MainWindow : View("Firewall Log Analyzer") {
 
         }
 
-        center(KasperskyTable::class)
+        center(currentTable::class)
     }
 }
