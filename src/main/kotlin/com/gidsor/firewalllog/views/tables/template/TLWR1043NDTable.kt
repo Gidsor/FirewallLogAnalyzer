@@ -10,7 +10,9 @@ class TLWR1043NDTable : View("My View") {
     override val root = tableview(store.getLogs()) {
         column("time", TLWR1043NDLogFile::time)
         column("date", TLWR1043NDLogFile::date)
-        column("text", TLWR1043NDLogFile::name)
+        column("text", TLWR1043NDLogFile::type)
+        column("text", TLWR1043NDLogFile::level)
+        column("text", TLWR1043NDLogFile::logContent)
         smartResize()
     }
 }
