@@ -41,7 +41,7 @@ class AddLogView : View("My View") {
 
                     when (firewallComboBox.selectedItem) {
                         FirewallType.Kaspersky -> {
-                            kasperskyStore.addLogFile(text, name)
+                            kasperskyStore.addLogFiles(text, name)
 
                         }
 

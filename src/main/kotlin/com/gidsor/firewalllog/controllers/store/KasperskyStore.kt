@@ -14,10 +14,15 @@ class KasperskyStore : Controller() {
         commonStore.addLogFile(log)
     }
 
-    fun addLogFile(log: String, nameOfLogFile: String) {
-        println(KasperskyParser.parseTextToLogFiles(log, nameOfLogFile))
-        val logFile = KasperskyLogFile(name = log, nameOfLogFile = nameOfLogFile)
-        addLogFile(logFile)
+    fun addLogFiles(log: String, nameOfLogFile: String) {
+//        val logFile = KasperskyLogFile(name = log, nameOfLogFile = nameOfLogFile)
+//        addLogFile(logFile)
+        addLogFiles(KasperskyParser.parseTextToLogFiles(log, nameOfLogFile))
+    }
+
+    fun addLogFiles(log: List<KasperskyLogFile>) {
+        logs.addAll(log)
+        commonStore.addLogFiles(log)
     }
 
     fun getLogs(): ObservableList<KasperskyLogFile> {

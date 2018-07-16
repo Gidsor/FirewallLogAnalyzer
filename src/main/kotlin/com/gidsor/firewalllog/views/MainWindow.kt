@@ -8,7 +8,7 @@ import tornadofx.*
 class MainWindow : View("Firewall Log Analyzer") {
 
     companion object {
-        var currentTable: View = DefaultTable()
+        var currentTable: View = KasperskyTable()
     }
 
     override val root = borderpane {
