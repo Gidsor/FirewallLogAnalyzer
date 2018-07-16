@@ -9,6 +9,10 @@ class KasperskyFirewallView : View("My View") {
     override val root = hbox {
         vbox {
             label("Общая информация")
+            label {
+                val count = store.getLogs().distinctBy { it.nameOfLogFile }.size
+                text = "Количество лог файлов: $count"
+            }
         }
 
         vbox {
