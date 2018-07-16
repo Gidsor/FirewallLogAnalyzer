@@ -1,7 +1,6 @@
-package com.gidsor.firewalllog.controllers.parsers
+package com.gidsor.firewalllog.utils.parsers
 
 import com.gidsor.firewalllog.models.logfiles.template.TLWR1043NDLogFile
-import tornadofx.*
 import java.time.LocalDate
 import java.time.LocalTime
 import java.time.format.DateTimeFormatter
