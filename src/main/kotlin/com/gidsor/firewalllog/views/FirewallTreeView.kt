@@ -7,6 +7,7 @@ import com.gidsor.firewalllog.utils.FirewallType
 import com.gidsor.firewalllog.views.tables.DefaultTable
 import com.gidsor.firewalllog.views.tables.template.KasperskyLogFileTable
 import com.gidsor.firewalllog.views.tables.template.KasperskyStoreTable
+import com.gidsor.firewalllog.views.tables.template.TLWR1043NDLogFileTable
 import com.gidsor.firewalllog.views.tables.template.TLWR1043NDStoreTable
 import javafx.scene.control.TreeItem
 import javafx.scene.layout.BorderPane
@@ -31,22 +32,20 @@ class FirewallTreeView : View("My View") {
 
         onUserSelect {
             when (it) {
-                is String -> {
-                    (parent as BorderPane).center = BorderPane().center(DefaultTable::class)
-                }
+                is String -> (parent as BorderPane).center = BorderPane().center(DefaultTable::class)
+
                 is FirewallType -> {
                     when (it) {
-                        FirewallType.Kaspersky -> {
-                            (parent as BorderPane).center = BorderPane().center(KasperskyStoreTable::class)
-                        }
-
-                        FirewallType.TLWR1043ND -> {
-                            (parent as BorderPane).center = BorderPane().center(TLWR1043NDStoreTable::class)
-                        }
+                        FirewallType.Kaspersky -> (parent as BorderPane).center = BorderPane().center(KasperskyStoreTable::class)
+                        FirewallType.TLWR1043ND -> (parent as BorderPane).center = BorderPane().center(TLWR1043NDStoreTable::class)
                     }
                 }
+
                 is LogFile -> {
-                    (parent as BorderPane).center = KasperskyLogFileTable(it.nameOfLogFile).table
+                    when (it.firewallType) {
+                        FirewallType.Kaspersky -> (parent as BorderPane).center = KasperskyLogFileTable(it.nameOfLogFile).table
+                        FirewallType.TLWR1043ND -> (parent as BorderPane).center = TLWR1043NDLogFileTable(it.nameOfLogFile).table
+                    }
                     println("Is Log File: ${it.nameOfLogFile}")
                 }
             }
