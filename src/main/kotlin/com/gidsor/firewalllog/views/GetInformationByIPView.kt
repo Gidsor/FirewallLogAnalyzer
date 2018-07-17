@@ -15,26 +15,42 @@ class GetInformationByIPView : View("My View") {
     private lateinit var information: Text
 
     override val root = hbox {
+
+        minWidth = 700.0
+        minHeight = 500.0
+
+        maxWidth = 700.0
+        maxHeight = 500.0
+
         vbox {
-            prefWidth = 200.0
 
             label("IP-адрес")
 
             ip = textfield {
+                minWidth = 200.0
+                maxWidth = 200.0
             }
 
-            result = label("")
 
             button("Обнаружить") {
                 action {
-                    result.text = informationController.getLocation(ip.text)
+                    information.text = informationController.getInformation(ip.text)
                 }
             }
 
         }
 
         vbox {
-            information = text("")
+            scrollpane {
+                minHeight = 500.0
+                maxHeight = 500.0
+
+                minWidth = 500.0
+                maxWidth = 500.0
+
+                information = text("") {
+                }
+            }
         }
     }
 
