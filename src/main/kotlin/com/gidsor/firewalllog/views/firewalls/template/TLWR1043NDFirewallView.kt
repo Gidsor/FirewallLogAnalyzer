@@ -28,20 +28,22 @@ class TLWR1043NDFirewallView : View("My View") {
             }
         }
 
-        hbox {
-            piechart("Тип события") {
-                store.getLogs().distinctBy { it.type }.forEach { item ->
-                    data.add(PieChart.Data(item.type, store.getLogs().count {
-                        it.type == item.type
-                    }.toDouble()))
+        scrollpane {
+            hbox {
+                piechart("Тип события") {
+                    store.getLogs().distinctBy { it.type }.forEach { item ->
+                        data.add(PieChart.Data(item.type, store.getLogs().count {
+                            it.type == item.type
+                        }.toDouble()))
+                    }
                 }
-            }
 
-            piechart("Уровень значимости") {
-                store.getLogs().distinctBy { it.level }.forEach { item ->
-                    data.add(PieChart.Data(item.level, store.getLogs().count {
-                        it.level == item.level
-                    }.toDouble()))
+                piechart("Уровень значимости") {
+                    store.getLogs().distinctBy { it.level }.forEach { item ->
+                        data.add(PieChart.Data(item.level, store.getLogs().count {
+                            it.level == item.level
+                        }.toDouble()))
+                    }
                 }
             }
         }

@@ -1,6 +1,7 @@
 package com.gidsor.firewalllog.views.firewalls.template
 
 import com.gidsor.firewalllog.controllers.store.KasperskyStore
+import com.gidsor.firewalllog.utils.ParserLog
 import javafx.scene.chart.PieChart
 import tornadofx.*
 
@@ -27,21 +28,22 @@ class KasperskyFirewallView : View("My View") {
             }
         }
 
-        hbox {
-            piechart("Наименования") {
-                store.getLogs().distinctBy { it.name }.forEach { item ->
-                    data.add(PieChart.Data(item.name, store.getLogs().count {
-                        it.name == item.name
-                    }.toDouble()))
+        scrollpane {
+            vbox {
+                piechart("Наименования") {
+                    store.getLogs().distinctBy { it.name }.forEach { item ->
+                        data.add(PieChart.Data(item.name, store.getLogs().count {
+                            it.name == item.name
+                        }.toDouble()))
+                    }
                 }
-            }
 
-            // TODO fix pie chart. Need use parser for ip
-            piechart("Атаки с IP") {
-                store.getLogs().distinctBy { it.objectAttack }.forEach { item ->
-                    data.add(PieChart.Data(item.objectAttack, store.getLogs().count {
-                        it.objectAttack == item.objectAttack
-                    }.toDouble()))
+                piechart("Атаки с IP") {
+                    store.getLogs().distinctBy { ParserLog.getFirstIpAddress(it.objectAttack) }.forEach { item ->
+                        data.add(PieChart.Data(ParserLog.getFirstIpAddress(item.objectAttack), store.getLogs().count {
+                            ParserLog.getFirstIpAddress(it.objectAttack) == ParserLog.getFirstIpAddress(item.objectAttack)
+                        }.toDouble()))
+                    }
                 }
             }
         }

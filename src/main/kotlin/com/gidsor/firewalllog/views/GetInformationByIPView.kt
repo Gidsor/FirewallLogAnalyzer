@@ -19,9 +19,6 @@ class GetInformationByIPView : View("My View") {
         minWidth = 700.0
         minHeight = 500.0
 
-        maxWidth = 700.0
-        maxHeight = 500.0
-
         vbox {
 
             label("IP-адрес")
@@ -46,7 +43,6 @@ class GetInformationByIPView : View("My View") {
                 maxHeight = 500.0
 
                 minWidth = 500.0
-                maxWidth = 500.0
 
                 information = text("") {
                 }
