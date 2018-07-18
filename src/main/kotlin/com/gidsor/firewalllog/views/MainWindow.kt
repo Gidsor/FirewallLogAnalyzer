@@ -7,8 +7,8 @@ class MainWindow : View("Firewall Log Analyzer") {
 
 
     override val root = borderpane {
-        prefWidth = 800.0
-        prefHeight = 600.0
+        prefWidth = 1280.0
+        prefHeight = 720.0
 
         top(MainMenu::class)
 
