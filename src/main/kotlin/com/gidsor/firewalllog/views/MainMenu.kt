@@ -10,7 +10,7 @@ class MainMenu : View("My View") {
             }
         }
 
-        button("Получить местоположение по IP") {
+        button("Получить информацию по IP") {
             action {
                 GetInformationByIPView().openModal()
             }
