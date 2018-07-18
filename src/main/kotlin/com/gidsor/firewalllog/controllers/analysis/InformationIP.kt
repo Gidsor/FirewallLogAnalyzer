@@ -3,7 +3,6 @@ package com.gidsor.firewalllog.controllers.analysis
 import org.jsoup.Jsoup
 import org.jsoup.nodes.Document
 import org.jsoup.safety.Whitelist
-import org.jsoup.select.Elements
 import tornadofx.*
 import java.util.regex.Pattern
 

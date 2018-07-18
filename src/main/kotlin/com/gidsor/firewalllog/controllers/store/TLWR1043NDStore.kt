@@ -9,11 +9,6 @@ class TLWR1043NDStore : Controller() {
     private val logs = mutableListOf<TLWR1043NDLogFile>().observable()
     private val commonStore: CommonStore by inject()
 
-//    fun addLogFile(log: TLWR1043NDLogFile) {
-//        logs.add(log)
-//        commonStore.addLogFile(log)
-//    }
-
     fun addLogFiles(log: String, nameOfLogFile: String) {
         addLogFiles(TLWR1043NDParser.parseTextToLogFiles(log, nameOfLogFile))
     }

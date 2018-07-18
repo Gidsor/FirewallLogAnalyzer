@@ -28,7 +28,6 @@ class KasperskyLogFileTable(nameOfLogFile: String) : View("My View") {
 
             onDoubleClick {
                 val info = informationIP.getInformation(ParserLog.getFirstIpAddress(this.selectedItem!!.objectAttack))
-//                println(info)
                 alert(Alert.AlertType.INFORMATION, "Информация об IP", info).dialogPane.add(
                     scrollpane {
                         text(info)

@@ -1,6 +1,5 @@
 package com.gidsor.firewalllog.views
 
-import com.gidsor.firewalllog.controllers.store.CommonStore
 import com.gidsor.firewalllog.controllers.store.KasperskyStore
 import com.gidsor.firewalllog.controllers.store.TLWR1043NDStore
 import com.gidsor.firewalllog.utils.FirewallType

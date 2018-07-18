@@ -8,9 +8,7 @@ import com.gidsor.firewalllog.views.firewalls.DefaultFirewallView
 import com.gidsor.firewalllog.views.firewalls.template.KasperskyFirewallView
 import com.gidsor.firewalllog.views.firewalls.template.TLWR1043NDFirewallView
 import com.gidsor.firewalllog.views.tables.template.KasperskyLogFileTable
-import com.gidsor.firewalllog.views.tables.template.KasperskyStoreTable
 import com.gidsor.firewalllog.views.tables.template.TLWR1043NDLogFileTable
-import com.gidsor.firewalllog.views.tables.template.TLWR1043NDStoreTable
 import javafx.scene.control.TreeItem
 import javafx.scene.layout.BorderPane
 import tornadofx.*
@@ -38,9 +36,6 @@ class FirewallTreeView : View("My View") {
 
                 is FirewallType -> {
                     when (it) {
-//                        // Show all logs for this firewall
-//                        FirewallType.Kaspersky -> (parent as BorderPane).center = BorderPane().center(KasperskyStoreTable::class)
-//                        FirewallType.TLWR1043ND -> (parent as BorderPane).center = BorderPane().center(TLWR1043NDStoreTable::class)
                         FirewallType.Kaspersky -> (parent as BorderPane).center = BorderPane().center(KasperskyFirewallView::class)
                         FirewallType.TLWR1043ND -> (parent as BorderPane).center = BorderPane().center(TLWR1043NDFirewallView::class)
                     }
@@ -51,7 +46,6 @@ class FirewallTreeView : View("My View") {
                         FirewallType.Kaspersky -> (parent as BorderPane).center = KasperskyLogFileTable(it.nameOfLogFile).table
                         FirewallType.TLWR1043ND -> (parent as BorderPane).center = TLWR1043NDLogFileTable(it.nameOfLogFile).table
                     }
-//                    println("Is Log File: ${it.nameOfLogFile}")
                 }
             }
         }

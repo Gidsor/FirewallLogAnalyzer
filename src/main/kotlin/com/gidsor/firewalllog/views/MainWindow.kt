@@ -14,10 +14,6 @@ class MainWindow : View("Firewall Log Analyzer") {
 
         left(FirewallTreeView::class)
 
-        bottom {
-
-        }
-
         center(DefaultFirewallView::class)
     }
 }

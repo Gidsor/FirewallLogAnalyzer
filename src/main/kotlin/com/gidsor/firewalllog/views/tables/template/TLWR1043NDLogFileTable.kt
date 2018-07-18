@@ -1,15 +1,12 @@
 package com.gidsor.firewalllog.views.tables.template
 
 import com.gidsor.firewalllog.controllers.analysis.InformationIP
-import com.gidsor.firewalllog.controllers.store.KasperskyStore
 import com.gidsor.firewalllog.controllers.store.TLWR1043NDStore
-import com.gidsor.firewalllog.models.logfiles.template.KasperskyLogFile
 import com.gidsor.firewalllog.models.logfiles.template.TLWR1043NDLogFile
 import com.gidsor.firewalllog.utils.ParserLog
 import javafx.scene.control.Alert
 import javafx.scene.control.TableView
 import tornadofx.*
-
 
 class TLWR1043NDLogFileTable(nameOfLogFile: String) : View("My View") {
     private val store: TLWR1043NDStore by inject()
@@ -30,7 +27,6 @@ class TLWR1043NDLogFileTable(nameOfLogFile: String) : View("My View") {
 
             onDoubleClick {
                 val info = informationIP.getInformation(ParserLog.getFirstIpAddress(this.selectedItem!!.logContent))
-//                println(info)
                 alert(Alert.AlertType.INFORMATION, "Информация об IP", info).dialogPane.add(
                     scrollpane {
                         text(info)

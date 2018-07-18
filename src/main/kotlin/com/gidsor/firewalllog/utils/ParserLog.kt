@@ -2,8 +2,6 @@ package com.gidsor.firewalllog.utils
 
 import java.util.regex.Pattern
 
-
-
 object ParserLog {
 
     private val ipRegex = Pattern.compile(

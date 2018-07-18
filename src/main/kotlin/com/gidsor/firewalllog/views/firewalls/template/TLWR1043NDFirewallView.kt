@@ -1,7 +1,6 @@
 package com.gidsor.firewalllog.views.firewalls.template
 
 import com.gidsor.firewalllog.controllers.store.TLWR1043NDStore
-import javafx.scene.chart.Chart
 import javafx.scene.chart.PieChart
 import tornadofx.*
 
