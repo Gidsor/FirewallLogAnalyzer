@@ -28,7 +28,22 @@ class KasperskyFirewallView : View("My View") {
         }
 
         hbox {
+            piechart("Наименования") {
+                store.getLogs().distinctBy { it.name }.forEach { item ->
+                    data.add(PieChart.Data(item.name, store.getLogs().count {
+                        it.name == item.name
+                    }.toDouble()))
+                }
+            }
 
+            // TODO fix pie chart. Need use parser for ip
+            piechart("Атаки с IP") {
+                store.getLogs().distinctBy { it.objectAttack }.forEach { item ->
+                    data.add(PieChart.Data(item.objectAttack, store.getLogs().count {
+                        it.objectAttack == item.objectAttack
+                    }.toDouble()))
+                }
+            }
         }
     }
 }

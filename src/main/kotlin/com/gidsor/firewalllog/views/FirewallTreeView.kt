@@ -51,7 +51,7 @@ class FirewallTreeView : View("My View") {
                         FirewallType.Kaspersky -> (parent as BorderPane).center = KasperskyLogFileTable(it.nameOfLogFile).table
                         FirewallType.TLWR1043ND -> (parent as BorderPane).center = TLWR1043NDLogFileTable(it.nameOfLogFile).table
                     }
-                    println("Is Log File: ${it.nameOfLogFile}")
+//                    println("Is Log File: ${it.nameOfLogFile}")
                 }
             }
         }
