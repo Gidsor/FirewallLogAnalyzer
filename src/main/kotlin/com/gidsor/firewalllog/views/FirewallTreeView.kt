@@ -5,10 +5,10 @@ import com.gidsor.firewalllog.controllers.store.FirewallStore
 import com.gidsor.firewalllog.models.logfiles.LogFile
 import com.gidsor.firewalllog.utils.FirewallType
 import com.gidsor.firewalllog.views.firewalls.DefaultFirewallView
-import com.gidsor.firewalllog.views.firewalls.template.KasperskyFirewallView
-import com.gidsor.firewalllog.views.firewalls.template.TLWR1043NDFirewallView
-import com.gidsor.firewalllog.views.tables.template.KasperskyLogFileTable
-import com.gidsor.firewalllog.views.tables.template.TLWR1043NDLogFileTable
+import com.gidsor.firewalllog.views.firewalls.KasperskyFirewallView
+import com.gidsor.firewalllog.views.firewalls.TLWR1043NDFirewallView
+import com.gidsor.firewalllog.views.tables.KasperskyLogFileTable
+import com.gidsor.firewalllog.views.tables.TLWR1043NDLogFileTable
 import javafx.scene.control.TreeItem
 import javafx.scene.layout.BorderPane
 import tornadofx.*

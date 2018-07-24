@@ -1,7 +1,7 @@
 package com.gidsor.firewalllog.controllers.store
 
 import com.gidsor.firewalllog.utils.parsers.TLWR1043NDParser
-import com.gidsor.firewalllog.models.logfiles.template.TLWR1043NDLogFile
+import com.gidsor.firewalllog.models.logfiles.TLWR1043NDLogFile
 import javafx.collections.ObservableList
 import tornadofx.*
 

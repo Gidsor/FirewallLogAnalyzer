@@ -1,8 +1,8 @@
-package com.gidsor.firewalllog.views.tables.template
+package com.gidsor.firewalllog.views.tables
 
 import com.gidsor.firewalllog.controllers.analysis.InformationIP
 import com.gidsor.firewalllog.controllers.store.TLWR1043NDStore
-import com.gidsor.firewalllog.models.logfiles.template.TLWR1043NDLogFile
+import com.gidsor.firewalllog.models.logfiles.TLWR1043NDLogFile
 import com.gidsor.firewalllog.utils.ParserLog
 import javafx.scene.control.Alert
 import javafx.scene.control.TableView

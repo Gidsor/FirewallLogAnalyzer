@@ -1,6 +1,6 @@
 package com.gidsor.firewalllog.utils.parsers
 
-import com.gidsor.firewalllog.models.logfiles.template.KasperskyLogFile
+import com.gidsor.firewalllog.models.logfiles.KasperskyLogFile
 import java.time.LocalDate
 import java.time.LocalTime
 

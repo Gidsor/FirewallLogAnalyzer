@@ -1,4 +1,4 @@
-package com.gidsor.firewalllog.views.firewalls.template
+package com.gidsor.firewalllog.views.firewalls
 
 import com.gidsor.firewalllog.controllers.store.TLWR1043NDStore
 import javafx.scene.chart.PieChart

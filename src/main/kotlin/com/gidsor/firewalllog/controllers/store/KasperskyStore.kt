@@ -1,7 +1,7 @@
 package com.gidsor.firewalllog.controllers.store
 
 import com.gidsor.firewalllog.utils.parsers.KasperskyParser
-import com.gidsor.firewalllog.models.logfiles.template.KasperskyLogFile
+import com.gidsor.firewalllog.models.logfiles.KasperskyLogFile
 import javafx.collections.ObservableList
 import tornadofx.*
 

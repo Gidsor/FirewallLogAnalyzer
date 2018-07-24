@@ -1,7 +1,7 @@
-package com.gidsor.firewalllog.views.tables.template
+package com.gidsor.firewalllog.views.tables
 
 import com.gidsor.firewalllog.controllers.store.TLWR1043NDStore
-import com.gidsor.firewalllog.models.logfiles.template.TLWR1043NDLogFile
+import com.gidsor.firewalllog.models.logfiles.TLWR1043NDLogFile
 import tornadofx.*
 
 class TLWR1043NDStoreTable : View("My View") {

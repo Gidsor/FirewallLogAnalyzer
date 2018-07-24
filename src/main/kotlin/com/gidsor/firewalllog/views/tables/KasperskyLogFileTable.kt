@@ -1,8 +1,8 @@
-package com.gidsor.firewalllog.views.tables.template
+package com.gidsor.firewalllog.views.tables
 
 import com.gidsor.firewalllog.controllers.analysis.InformationIP
 import com.gidsor.firewalllog.controllers.store.KasperskyStore
-import com.gidsor.firewalllog.models.logfiles.template.KasperskyLogFile
+import com.gidsor.firewalllog.models.logfiles.KasperskyLogFile
 import com.gidsor.firewalllog.utils.ParserLog
 import javafx.scene.control.Alert
 import javafx.scene.control.TableView
