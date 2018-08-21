@@ -4,9 +4,15 @@ import tornadofx.*
 
 class MainMenu : View("My View") {
     override val root = hbox {
-        button("Добавить") {
+        button("Добавить лог-файл") {
             action {
-                AddLogView().openModal()
+                AddLogFileView().openModal()
+            }
+        }
+
+        button("Добавить хранилище логов") {
+            action {
+                AddLogStoreView().openModal()
             }
         }
 

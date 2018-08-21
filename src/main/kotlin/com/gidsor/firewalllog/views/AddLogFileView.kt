@@ -9,7 +9,7 @@ import javafx.scene.control.ComboBox
 import javafx.stage.FileChooser
 import tornadofx.*
 
-class AddLogView : View("My View") {
+class AddLogFileView : View("My View") {
     val firewalls = FXCollections.observableArrayList<FirewallType>()
     val firstFirewall: SimpleObjectProperty<FirewallType>
 
